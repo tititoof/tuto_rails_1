@@ -28,6 +28,7 @@ gem 'thin'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap_form'
+gem 'bootstrap-wysihtml5-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -48,4 +49,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
