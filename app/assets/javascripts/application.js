@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/fr-FR
+//= require custom
 //= require_self
 //= require_tree .
