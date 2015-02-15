@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/fr-FR
+//= require select2
+//= require select2_locale_"fr"
 //= require custom
 //= require_self
 //= require_tree .

@@ -1,14 +1,27 @@
+<h1 class="page-header">
+  Show Article
+  <%= link_to 'Edit', edit_article_path(@article), role: "button", class: "btn btn-primary" %>
+</h1>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @article.body.html_safe %>
-</p>
-
-<%= link_to 'Back', articles_path, role: "button", class: "btn btn-info" %>
-<%= link_to 'Edit', edit_article_path(@article), role: "button", class: "btn btn-primary" %>
+<div class="row">
+  <div class="col-xs-2 col-sm-2 col-md-1">
+    <strong>Title:</strong>
+  </div>
+  <div class="col-xs-10 col-sm-10 col-md-11">
+    <p class="lead">
+      <%= @article.title %>
+    </p>
+  </div>
+  <div class="col-xs-2 col-sm-2 col-md-1">
+    <strong>Body:</strong>
+    <div class="col-xs-10 col-sm-10 col-md-11">
+      <p class="lead">
+        <%= @article.body.html_safe %>
+      </p>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <%= link_to 'Back', articles_path, role: "button", class: "btn btn-info" %>
+</div>
