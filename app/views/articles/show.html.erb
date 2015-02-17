@@ -21,6 +21,20 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <h1>Add a comment</h1>
+  <%= bootstrap_form_for([@article, @comment],  layout: :horizontal, label_col: "col-sx-4 col-sm-1", control_col: "col-xs-8 col-sm-11") do |f| %>
+    <%= f.text_field :author, class: "col-xs-4 col-md-8" %>
+    <%= f.text_area :body, class: "wysihtml5" %>
+    <%= f.submit %>
+  <% end %>
+  <h1>Comments</h1>
+  <ul>
+    <% @article.comments.each do |comment| %>
+      <li><%= comment.author %> : <%= comment.body %></li>
+    <% end %>
+  </ul>
+</div>
 <hr/>
 <div class="row">
   <%= link_to 'Back', articles_path, role: "button", class: "btn btn-info" %>
