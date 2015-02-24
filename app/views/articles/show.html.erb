@@ -35,6 +35,12 @@
     <% end %>
   </ul>
 </div>
+<h3>Tags</h3>
+<ul>
+<% @article.tags.each do |tag| %>
+  <li><%= tag.name %></li>
+<% end %>
+</ul>
 <hr/>
 <div class="row">
   <%= link_to 'Back', articles_path, role: "button", class: "btn btn-info" %>
