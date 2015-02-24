@@ -14,5 +14,17 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-xs-2 col-sm-2 col-md-1">
+    Articles list
+  </div>
+  <div class="col-xs-10 col-sm-10 col-md-11">
+    <div class="list-group">
+      <% @tag.articles.each do |article| %>
+        <%= link_to article.title, article, class: 'list-group-item' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
   <%= link_to 'Back', tags_path, role: "button", class: "btn btn-info" %>
 </div>

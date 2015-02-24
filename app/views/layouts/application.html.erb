@@ -25,10 +25,11 @@
     <div class="container-fluid">
     	<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
-    			<ul class="nav nav-sidebar">
-      				<li><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-		    	</ul>
-    		</div>
+    		<ul class="nav nav-sidebar">
+          <li <% if current_page?(controller: 'articles') %>class="active"<% end %> ><%= link_to 'Articles', articles_path %></li>
+          <li <% if current_page?(controller: 'tags') %>class="active"<% end %> ><%= link_to 'Tags', tags_path %></li>
+		    </ul>
+    	</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     			<%= yield %>
 			</div>
