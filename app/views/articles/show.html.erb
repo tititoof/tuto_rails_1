@@ -20,6 +20,15 @@
       </p>
     </div>
   </div>
+  <div class="col-xs-2 col-sm-2 col-md-1">
+    <strong>Body:</strong>
+    <div class="col-xs-10 col-sm-10 col-md-11">
+      <p class="lead">
+        <%= @article.image_file_name %>
+        <%= image_tag @article.image.url %>      
+      </p>
+    </div>
+  </div>
 </div>
 <div class="row">
   <h1>Add a comment</h1>
