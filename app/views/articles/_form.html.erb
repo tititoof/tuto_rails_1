@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@article,  layout: :horizontal, label_col: "col-sx-4 col-sm-1", control_col: "col-xs-8 col-sm-11") do |f| %>
+<%= bootstrap_form_for(@article, layout: :horizontal, label_col: "col-sx-4 col-sm-1", control_col: "col-xs-8 col-sm-11") do |f| %>
   	<% if @article.errors.any? %>
     	<div id="error_explanation">
       		<h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>

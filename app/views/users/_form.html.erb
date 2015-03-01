@@ -1,0 +1,30 @@
+<%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sx-4 col-sm-1", control_col: "col-xs-8 col-sm-11") do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :username, class: "col-xs-4 col-md-8" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email, class: "col-xs-4 col-md-8" %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, class: "col-xs-4 col-md-8"  %>
+  </div>
+    <%= f.password_field :password_confirmation, class: "col-xs-4 col-md-8"  %>
+  <div class="field">
+  </div>
+  <div class="pull-right">
+    <%= f.submit, :class => "btn btn-primary" %>
+  </div>
+  <%= link_to 'Back', users_path, role: "button", class: "btn btn-info" %>
+<% end %>
