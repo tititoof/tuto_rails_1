@@ -16,8 +16,9 @@
  *= require bootstrap-wysihtml5
  *= require select2
  *= require select2-bootstrap
+ *= require bootstrap-material-design
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import "custom.scss";
+@import "custom.css";

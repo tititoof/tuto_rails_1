@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require bootstrap-material-design
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/fr-FR
 //= require select2
