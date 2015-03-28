@@ -19,22 +19,40 @@
     <![endif]-->
   </head>
   <body>
-  	<%= render 'shared/navigation_bar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="container-fluid">
+    <%= render 'shared/navigation_bar' %>
+    <!--<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>-->
+    <div class="container-fluid main">
     	<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-    		<ul class="nav nav-sidebar">
-          <li <% if current_page?(controller: 'articles') %>class="active"<% end %> ><%= link_to 'Articles', articles_path %></li>
-          <li <% if current_page?(controller: 'tags') %>class="active"<% end %> ><%= link_to 'Tags', tags_path %></li>
-          <li <% if current_page?(controller: 'users') %>class="active"<% end %> ><%= link_to 'Users', users_path %></li>
-		    </ul>
-    	</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    			<%= yield %>
-			</div>
-		</div>
-	</div>
+        <nav class="col-xs-2 menu">
+          <ul class="nav nav-sidebar">
+            <li class="withoutripple <% if current_page?(controller: 'articles') %>active<% end %>" data-target="body_page" data-remote="<%= articles_path %>" data-type="list">Articles</li>
+            <li class="withoutripple <% if current_page?(controller: 'tags') %>active<% end %>" data-target="body_page" data-remote="<%= tags_path %>" data-type="list">Tags</li>
+            <li class="withoutripple <% if current_page?(controller: 'users') %>active<% end %>" data-target="body_page" data-remote="<%= users_path %>" data-type="list">Users</li>
+          </ul>
+        </nav>
+        <div class="col-xs-10">
+          <div class="well" id="body_page">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+	 </div>
+   <div id="complete-dialog" class="modal fade" tabindex="-1">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+           <h4 class="modal-title">Dialog</h4>
+         </div>
+         <div class="modal-body">
+           <p></p>
+         </div>
+         <div class="modal-footer">
+           <button class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+         </div>
+       </div>
+     </div>
+  </div>
   </body>
 </html>
