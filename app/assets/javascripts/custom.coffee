@@ -34,10 +34,10 @@ ready = ->
       dataType: 'json'
       success: (data) ->
         body_page = $('#body_page')
+        new_body  = set_list_body(that.html(), data)
         body_page.addClass('animated fadeOutDown')
         body_page.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () ->
           body_page.empty()
-          new_body  = set_list_body(that.html(), data)
           body_page.html(new_body)
           body_page.removeClass('animated fadeOutDown')
           body_page.addClass('animated fadeInUp')
