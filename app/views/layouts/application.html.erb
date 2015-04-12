@@ -25,10 +25,16 @@
     <div class="container-fluid main">
     	<div class="row">
         <nav class="col-xs-2 menu">
-          <ul class="nav nav-sidebar">
-            <li class="withoutripple <% if current_page?(controller: 'articles') %>active<% end %>" data-target="body_page" data-remote="<%= articles_path %>" data-type="list">Articles</li>
-            <li class="withoutripple <% if current_page?(controller: 'tags') %>active<% end %>" data-target="body_page" data-remote="<%= tags_path %>" data-type="list">Tags</li>
-            <li class="withoutripple <% if current_page?(controller: 'users') %>active<% end %>" data-target="body_page" data-remote="<%= users_path %>" data-type="list">Users</li>
+          <ul class="nav-sidebar">
+            <li class="withoutripple <% if current_page?(controller: 'articles') %>active<% end %>">
+              <%= link_to 'Articles', articles_path, class: 'sidebar-menu', :remote => true %>
+            </li>
+            <li class="withoutripple <% if current_page?(controller: 'tags') %>active<% end %>">
+              <%= link_to 'Tags', tags_path, class: 'sidebar-menu', :remote => true %>
+            </li>
+            <li class="withoutripple <% if current_page?(controller: 'users') %>active<% end %>">
+              <%= link_to 'Users', users_path, class: 'sidebar-menu', :remote => true %>
+            </li>
           </ul>
         </nav>
         <div class="col-xs-10">

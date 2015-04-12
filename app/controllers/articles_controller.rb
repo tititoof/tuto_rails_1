@@ -5,21 +5,37 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
     @comment = @article.comments.new
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # GET /articles/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # POST /articles

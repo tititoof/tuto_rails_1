@@ -5,20 +5,36 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    respond_to do |format|
+      format.html {render :index}
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # GET /users/new
   def new
     @user = User.new
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # GET /users/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/ajax_body.js' }
+    end
   end
 
   # POST /users

@@ -16,14 +16,14 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.body %></td>
-        <td><%= link_to 'Show', article, role: "button", class: "btn btn-default" %></td>
-        <td><%= link_to 'Edit', edit_article_path(article), role: "button", class: "btn btn-primary" %></td>
+        <td><%= link_to 'Show', article, role: "button", class: "btn btn-default", :remote => true %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), role: "button", class: "btn btn-primary", :remote => true %></td>
         <td><%= link_to 'Destroy', article, method: :delete, role: "button", class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= link_to 'New Article', new_article_path, role: "button", class: "btn btn-success", :remote => true %>
 
-<%= link_to 'New Article', new_article_path, role: "button", class: "btn btn-success" %>
+<br>

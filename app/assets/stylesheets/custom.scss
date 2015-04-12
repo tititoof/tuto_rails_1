@@ -49,6 +49,17 @@
   text-decoration: none;
 }
 
+a.sidebar-menu {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  padding: 0;
+}
+a.sidebar-menu a.active a.sidebar-menu:focus a.sidebar-menu:hover{
+  background-color: #dedede;
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+}
+
 .pages {
   position: absolute;
   top: 0;

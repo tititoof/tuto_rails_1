@@ -1,0 +1,6 @@
+$('#body_page').addClass('animated fadeOutDown')
+$('#body_page').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationed animationned', function() {
+  $('#body_page').html("<%= escape_javascript(render partial: 'index', locals: { articles: @articles } ) %>")
+  $('#body_page').removeClass('animated fadeOutDown')
+  $('#body_page').addClass('animated fadeInUp');
+});
