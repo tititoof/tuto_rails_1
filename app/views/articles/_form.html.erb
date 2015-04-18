@@ -10,6 +10,8 @@
     	</div>
   	<% end %>
     <%= f.text_field :title, class: "col-xs-4 col-md-8" %>
+    <% category_array = Category.all.collect { |cat| [cat.name, cat.id] } %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: 'Select category'}, class: "select2" %>
     <%= f.text_area :body, class: "wysihtml5" %>
     <%= f.text_field :tag_list, class: "col-xs-4 col-md-8" %>
     <%= f.file_field :image, class: "col-xs-4 col-md-8" %>
