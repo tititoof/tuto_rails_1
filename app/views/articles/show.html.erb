@@ -17,7 +17,11 @@
   </div>
   <div class="col-xs-10 col-sm-10 col-md-11">
     <p class="lead">
-      <%= @article.category.name %>
+      <% if defined?(@article.category.name) %>
+        <%= @article.category.name %>
+      <% else %>
+        No category
+      <% end %>
     </p>
   </div>
   <div class="col-xs-2 col-sm-2 col-md-1">
