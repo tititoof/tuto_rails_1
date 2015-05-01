@@ -1,6 +1,12 @@
+<% if defined?(@view) %>
+  <% @view_path = controller.controller_name + '/' + @view %>
+<% else %>
+  <% @view_path = controller.controller_name + '/' + controller.action_name %>
+<% end %>
+
 $('#body_page').addClass('animated fadeOutDown')
 $('#body_page').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationed animationned', function() {
-  $('#body_page').html("<%= escape_javascript(render file: controller.controller_name + '/' + controller.action_name , locals: { articles: @articles } ) %>")
+  $('#body_page').html("<%= escape_javascript(render file: @view_path , locals: { articles: @articles } ) %>")
   $('#body_page').removeClass('animated fadeOutDown')
   $('#body_page').addClass('animated fadeInUp')
   $("#body_page .wysihtml5").wysihtml5()

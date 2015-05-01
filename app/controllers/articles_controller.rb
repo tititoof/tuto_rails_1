@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params.has_key?(:category_id)
+      @articles = Category.find(params[:category_id]).articles
+    else
+      @articles = Article.all
+    end
     respond_to do |format|
       format.html
       format.js { render 'shared/ajax_body.js' }
@@ -41,15 +45,19 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @article  = Article.new(article_params)
+    @view     = 'index'
 
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
+        format.js { render 'shared/ajax_body.js' }
       else
+        @view = 'new'
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.js { render 'shared/ajax_body.js' }
       end
     end
   end
@@ -57,13 +65,17 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @view     = 'show'
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
+        format.js { render 'shared/ajax_body.js' }
       else
+        @view = 'edit'
         format.html { render :edit }
         format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.js { render 'shared/ajax_body.js' }
       end
     end
   end

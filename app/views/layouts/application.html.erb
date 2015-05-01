@@ -26,9 +26,15 @@
     	<div class="row">
         <nav class="col-xs-2 menu">
           <ul class="nav-sidebar">
-            <li class="withoutripple <% if current_page?(controller: 'articles') %>active<% end %>">
-              <%= link_to 'Articles', articles_path, class: 'sidebar-menu', :remote => true %>
+            <li class="withoutripple">
+              <%= link_to 'All', articles_path, class: 'sidebar-menu', :remote => true %>
             </li>
+            <% categories = Category.all %>
+            <% categories.each do |category| %>
+              <li class="withoutripple">
+                <%= link_to category.name, articles_path(:category_id => category.id), class: 'sidebar-menu', :remote => true %>
+              </li>
+            <% end %>
             <li class="withoutripple <% if current_page?(controller: 'tags') %>active<% end %>">
               <%= link_to 'Tags', tags_path, class: 'sidebar-menu', :remote => true %>
             </li>
